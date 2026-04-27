@@ -19,36 +19,35 @@ export default function Navbar({ user }: NavbarProps) {
   ];
 
   return (
-    <nav className="h-16 px-4 md:px-8 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-white dark:bg-slate-950 shrink-0 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-5xl">
+      <div className="glass-card rounded-2xl border-white/20 dark:border-white/5 py-3 px-6 shadow-2xl flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-[#0F172A] rounded flex items-center justify-center font-bold">🥩</div>
-            <span className="text-xl font-bold tracking-tight text-[#0F172A] dark:text-white">
-              WASEEM <span className="text-[#3B82F6]">AKRAM</span>
+            <div className="w-8 h-8 bg-[#0F172A] dark:bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-sm">WA</div>
+            <span className="text-lg font-black tracking-tighter text-[#0F172A] dark:text-white uppercase">
+              Waseem <span className="text-blue-600 dark:text-blue-400">Akram</span>
             </span>
           </Link>
         </div>
         
-        <div className="flex items-center gap-6">
-          <div className="hidden md:flex gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
-            <a href="#portfolio" className="hover:text-blue-500 transition-colors">Portfolio</a>
+        <div className="flex items-center gap-8">
+          <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            <a href="#portfolio" className="hover:text-blue-500 transition-colors">Catalogue</a>
             <a href="#pricing" className="hover:text-blue-500 transition-colors">Pricing</a>
             {user && (
-              <Link to="/admin" className="text-amber-600 hover:text-amber-500 font-bold flex items-center gap-1">
-                <ShieldCheck size={14} /> Admin
+              <Link to="/admin" className="text-amber-600 hover:text-amber-500 flex items-center gap-1">
+                <ShieldCheck size={12} /> Admin
               </Link>
             )}
           </div>
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1 bg-green-50 dark:bg-emerald-500/10 text-green-700 dark:text-emerald-400 rounded-full border border-green-200 dark:border-emerald-500/20">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-[10px] font-bold uppercase tracking-wider">Available</span>
-          </div>
+          
+          <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
+
           <a
             href="#contact"
-            className="px-4 py-2 bg-[#0F172A] hover:bg-slate-800 text-white text-sm font-semibold rounded transition-colors"
+            className="px-5 py-2 bg-[#0F172A] dark:bg-blue-600 hover:scale-105 active:scale-95 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-500/20"
           >
-            Hire Me
+            Hire
           </a>
         </div>
       </div>

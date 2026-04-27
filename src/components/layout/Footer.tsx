@@ -7,15 +7,15 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-[#0F172A] rounded flex items-center justify-center text-white font-bold text-xs">
-                🥩
+              <div className="w-6 h-6 bg-[#0F172A] rounded flex items-center justify-center text-white font-bold text-[10px]">
+                WA
               </div>
-              <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-                WASEEM <span className="text-blue-600">AKRAM</span>
+              <span className="text-lg font-black tracking-tighter text-slate-900 dark:text-white uppercase">
+                Waseem <span className="text-blue-600">Akram</span>
               </span>
             </div>
-            <p className="text-sm text-slate-500 dark:text-slate-400 max-w-xs text-center md:text-left">
-              Building high-performance digital experiences with precision and passion.
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 max-w-xs text-center md:text-left leading-relaxed">
+              High-stakes digital execution. Building the next generation of scalable infrastructure.
             </p>
           </div>
 
@@ -31,8 +31,8 @@ export default function Footer() {
                 <Twitter size={20} />
               </a>
             </div>
-            <p className="text-xs text-slate-400 dark:text-slate-500">
-              © {new Date().getFullYear()} Steak Portfolio. All rights reserved.
+            <p className="text-xs text-slate-400 dark:text-slate-500 font-mono">
+              © {new Date().getFullYear()} Waseem Akram. All units secured.
             </p>
           </div>
 
