@@ -1,0 +1,81 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Details about a portfolio project",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Project title" },
+        "description": { "type": "string", "description": "Markdown description of the project" },
+        "techStack": { "type": "array", "items": { "type": "string" }, "description": "List of technologies used" },
+        "previewUrl": { "type": "string", "format": "uri", "description": "Live demo URL" },
+        "imageUrl": { "type": "string", "format": "uri", "description": "Thumbnail image URL" },
+        "featured": { "type": "boolean", "description": "Whether to highlight this project" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the project was added" }
+      },
+      "required": ["title", "description", "techStack", "imageUrl", "featured", "createdAt"]
+    },
+    "PricingTier": {
+      "title": "Pricing Tier",
+      "description": "Information about service packages",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Package name (e.g., Basic, Pro)" },
+        "price": { "type": "number", "description": "Monthly or project price" },
+        "period": { "type": "string", "enum": ["month", "project"], "description": "Billing period" },
+        "features": { "type": "array", "items": { "type": "string" }, "description": "List of included features" },
+        "isPopular": { "type": "boolean", "description": "Whether this is the recommended tier" },
+        "order": { "type": "integer", "description": "Display order" }
+      },
+      "required": ["name", "price", "period", "features", "isPopular", "order"]
+    },
+    "ContactSubmission": {
+      "title": "Contact Submission",
+      "description": "Messages from the contact form",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "message", "createdAt"]
+    },
+    "Profile": {
+      "title": "User Profile",
+      "description": "Public profile info for the developer",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "bio": { "type": "string" },
+        "avatarUrl": { "type": "string", "format": "uri" },
+        "socials": {
+          "type": "object",
+          "properties": {
+            "github": { "type": "string" },
+            "linkedin": { "type": "string" },
+            "twitter": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "projects": {
+      "schema": "Project",
+      "description": "Collection of portfolio projects"
+    },
+    "pricing": {
+      "schema": "PricingTier",
+      "description": "Collection of pricing packages"
+    },
+    "contacts": {
+      "schema": "ContactSubmission",
+      "description": "Collection of received contact form messages"
+    },
+    "profiles": {
+      "schema": "Profile",
+      "description": "Developer profile information"
+    }
+  }
+}
