@@ -27,68 +27,63 @@ export default function PortfolioGrid() {
   }
 
   return (
-    <section id="portfolio" className="py-24 bg-white dark:bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Proof of <span className="text-blue-600">Work</span>
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl text-lg">
-            A selection of projects where performance, scalability, and design meet.
-          </p>
+    <section id="portfolio" className="w-full">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex justify-between items-end mb-8">
+          <div>
+            <h2 className="text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">Portfolio Highlights</h2>
+            <p className="text-slate-500 dark:text-slate-400 text-sm">Case studies in full-stack execution.</p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="group relative bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/50 dark:border-slate-800/50"
+              className="group bg-white dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-500/30 transition-all flex flex-col"
             >
-              <div className="aspect-video overflow-hidden relative">
+              <div className="aspect-[16/9] bg-slate-50 dark:bg-slate-950 rounded-lg mb-4 overflow-hidden relative border border-slate-100 dark:border-slate-800">
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                <div className="absolute top-2 right-2 px-2 py-1 bg-black/80 backdrop-blur-sm text-white text-[10px] font-bold rounded uppercase tracking-wider">
+                  Live Preview
+                </div>
+                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
                   <button 
                     onClick={() => setSelectedProject(project)}
-                    className="p-3 bg-white text-slate-900 rounded-full hover:scale-110 transition-transform"
+                    className="p-2.5 bg-white text-slate-900 rounded-lg font-bold text-xs"
                   >
-                    <Eye size={20} />
+                    View Details
                   </button>
                   <a
                     href={project.previewUrl}
                     target="_blank"
-                    rel="noreferrer"
-                    className="p-3 bg-blue-600 text-white rounded-full hover:scale-110 transition-transform"
+                    className="p-2.5 bg-[#3B82F6] text-white rounded-lg font-bold text-xs"
                   >
-                    <ExternalLink size={20} />
+                    Open Demo
                   </a>
                 </div>
               </div>
-
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">
-                  {project.description}
-                </p>
+              
+              <h4 className="font-bold text-[#0F172A] dark:text-white group-hover:text-blue-600 transition-colors">{project.title}</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">{project.description}</p>
+              
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-bold rounded"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}

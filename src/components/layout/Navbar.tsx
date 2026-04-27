@@ -19,102 +19,39 @@ export default function Navbar({ user }: NavbarProps) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-800/50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <div className="flex items-center gap-2">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                <Rocket size={18} />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                Steak<span className="text-blue-600">Portfolio</span>
-              </span>
-            </Link>
-          </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+    <nav className="h-16 px-4 md:px-8 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-white dark:bg-slate-950 shrink-0 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-8 h-8 bg-[#0F172A] rounded flex items-center justify-center font-bold">🥩</div>
+            <span className="text-xl font-bold tracking-tight text-[#0F172A] dark:text-white">
+              WASEEM <span className="text-[#3B82F6]">AKRAM</span>
+            </span>
+          </Link>
+        </div>
+        
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+            <a href="#portfolio" className="hover:text-blue-500 transition-colors">Portfolio</a>
+            <a href="#pricing" className="hover:text-blue-500 transition-colors">Pricing</a>
             {user && (
-              <Link
-                to="/admin"
-                className="flex items-center gap-1.5 text-sm font-medium text-amber-600 hover:text-amber-500 dark:text-amber-500 dark:hover:text-amber-400"
-              >
-                <ShieldCheck size={16} />
-                Admin
+              <Link to="/admin" className="text-amber-600 hover:text-amber-500 font-bold flex items-center gap-1">
+                <ShieldCheck size={14} /> Admin
               </Link>
             )}
-            <a
-              href="#contact"
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
-            >
-              Hire Me
-            </a>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 dark:text-slate-400"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1 bg-green-50 dark:bg-emerald-500/10 text-green-700 dark:text-emerald-400 rounded-full border border-green-200 dark:border-emerald-500/20">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Available</span>
           </div>
+          <a
+            href="#contact"
+            className="px-4 py-2 bg-[#0F172A] hover:bg-slate-800 text-white text-sm font-semibold rounded transition-colors"
+          >
+            Hire Me
+          </a>
         </div>
       </div>
-
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-400"
-                >
-                  {link.name}
-                </a>
-              ))}
-              {user && (
-                <Link
-                  to="/admin"
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-base font-medium text-amber-600 dark:text-amber-500"
-                >
-                  Admin Panel
-                </Link>
-              )}
-              <div className="pt-4 px-3">
-                <a
-                  href="#contact"
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-lg font-medium"
-                >
-                  Hire Me
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 }

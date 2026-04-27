@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white">
-                <Rocket size={14} />
+              <div className="w-6 h-6 bg-[#0F172A] rounded flex items-center justify-center text-white font-bold text-xs">
+                🥩
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-                Steak<span className="text-blue-600">Portfolio</span>
+                WASEEM <span className="text-blue-600">AKRAM</span>
               </span>
             </div>
             <p className="text-sm text-slate-500 dark:text-slate-400 max-w-xs text-center md:text-left">
