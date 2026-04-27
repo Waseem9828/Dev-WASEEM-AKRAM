@@ -21,9 +21,9 @@ export default function Hero() {
           <div className="w-44 h-44 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-blue-500 via-purple-500 to-amber-500 animate-spin-slow group-hover:pause shadow-2xl">
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=600" 
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1VU47NGBw2nMdMZ1Hg_chkqbp9_IbDEbWldnbfqOyFU3DEiz5pjiDH-i2IBqDVpkfVpL2lEbGiHjemYZD5a_dQjBzXDDQGc5ssSsEr9yRVKCkvv_-uHfX6nXFkW-t6BmI_uF5l7_Ql9pMShyphenhyphengmbyyyrGPvtSSG8abKxDxJ5MjRQGfTmWeXku0Kb47fcya/s1195/98430.png" 
                 alt="Waseem Akram" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
               />
             </div>
           </div>
