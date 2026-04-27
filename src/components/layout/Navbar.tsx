@@ -32,6 +32,7 @@ export default function Navbar({ user }: NavbarProps) {
         
         <div className="flex items-center gap-8">
           <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            <a href="#resume" className="hover:text-blue-500 transition-colors">Resume</a>
             <a href="#portfolio" className="hover:text-blue-500 transition-colors">Catalogue</a>
             <a href="#pricing" className="hover:text-blue-500 transition-colors">Pricing</a>
             {user && (

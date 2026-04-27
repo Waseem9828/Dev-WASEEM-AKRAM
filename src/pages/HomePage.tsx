@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import Hero from '../components/home/Hero';
+import Clients from '../components/home/Clients';
+import Resume from '../components/home/Resume';
 import Catalogue from '../components/home/Catalogue';
 import Skills from '../components/home/Skills';
 import Pricing from '../components/home/Pricing';
@@ -15,17 +17,19 @@ export default function HomePage() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen bg-[#F8FAFC] dark:bg-[#020617] selection:bg-blue-500 selection:text-white"
+      className="min-h-screen bg-[#F8FAFC] dark:bg-[#020617] selection:bg-blue-500 selection:text-white overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-24 md:py-32 relative z-10">
         {/* Floating Layout */}
-        <div className="flex flex-col lg:flex-row gap-20 items-start">
-          <div className="lg:w-[450px] lg:sticky lg:top-32 shrink-0">
+        <div className="flex flex-col lg:flex-row gap-20 items-center lg:items-start">
+          <div className="w-full lg:w-[450px] lg:sticky lg:top-32 shrink-0">
             <Hero />
           </div>
 
-          <div className="flex-1 space-y-32">
+          <div className="w-full flex-1 space-y-32">
             <Skills />
+            <Resume />
+            <Clients />
             <Catalogue projects={projects} />
             <Pricing />
             <Contact />

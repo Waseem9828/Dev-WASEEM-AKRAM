@@ -3,9 +3,9 @@ import { ArrowRight, Code2, Globe, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="h-full flex flex-col gap-12 py-4">
+    <section className="h-full w-full flex flex-col gap-12 py-4 px-4 sm:px-6 lg:px-0 max-w-lg mx-auto lg:max-w-none">
       {/* Floating Identity Sphere */}
-      <div className="relative h-64 md:h-80 flex items-center justify-center">
+      <div className="relative h-64 md:h-80 flex items-center justify-center overflow-visible">
         <motion.div
           animate={{ 
             y: [0, -15, 0],
@@ -18,7 +18,7 @@ export default function Hero() {
           className="relative group cursor-pointer"
         >
           {/* Main Profile Bubble */}
-          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-blue-500 via-purple-500 to-amber-500 animate-spin-slow group-hover:pause">
+          <div className="w-44 h-44 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-blue-500 via-purple-500 to-amber-500 animate-spin-slow group-hover:pause shadow-2xl">
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 relative z-10">
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=600" 
@@ -28,22 +28,22 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Orbiting Coding Elements */}
+          {/* Orbiting Coding Elements - Hidden or adjusted on extreme mobile */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0 pointer-events-none scale-90 sm:scale-100"
           >
-            <div className="absolute -top-4 left-1/2 -ml-8 bg-[#0F172A] text-white px-3 py-1 rounded-full text-[10px] font-mono shadow-xl border border-slate-700">
+            <div className="absolute -top-4 left-1/2 -ml-8 bg-[#0F172A] text-white px-3 py-1 rounded-full text-[10px] font-mono shadow-xl border border-slate-700 whitespace-nowrap">
               TypeScript
             </div>
-            <div className="absolute top-1/2 -right-12 -mt-4 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-mono shadow-xl">
+            <div className="absolute top-1/2 -right-10 -mt-4 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-mono shadow-xl hidden sm:block">
               React
             </div>
             <div className="absolute -bottom-4 left-1/2 -ml-8 bg-amber-500 text-black px-3 py-1 rounded-full text-[10px] font-mono shadow-xl font-bold">
               FullStack
             </div>
-            <div className="absolute top-1/2 -left-12 -mt-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-mono shadow-xl">
+            <div className="absolute top-1/2 -left-10 -mt-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-mono shadow-xl hidden sm:block">
               Node.js
             </div>
           </motion.div>
@@ -79,18 +79,44 @@ export default function Hero() {
       </div>
 
       <div className="flex flex-col gap-4 mt-4">
+        {/* Real-time Stats Grid */}
+        <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 mb-4 w-full max-w-sm mx-auto lg:mx-0">
+          <div className="p-4 glass-card rounded-2xl border-blue-500/10 text-center lg:text-left">
+            <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Total Shipped</p>
+            <div className="flex items-baseline justify-center lg:justify-start gap-1">
+              <span className="text-2xl font-black text-[#0F172A] dark:text-white">42</span>
+              <span className="text-[10px] text-blue-500 font-bold uppercase tracking-widest">MVPs</span>
+            </div>
+          </div>
+          <div className="p-4 glass-card rounded-2xl border-blue-500/10 text-center lg:text-left">
+            <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Contract Volume</p>
+            <div className="flex items-baseline justify-center lg:justify-start gap-1">
+              <span className="text-2xl font-black text-[#0F172A] dark:text-white">$850K</span>
+              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest">USD</span>
+            </div>
+          </div>
+        </div>
+
         <div className="flex items-center gap-4 text-xs font-mono text-slate-400 justify-center lg:justify-start">
           <span className="flex items-center gap-1.5"><div className="w-1 h-1 bg-blue-500 rounded-full"></div> 12+ MVPs Shipped</span>
           <span className="flex items-center gap-1.5"><div className="w-1 h-1 bg-amber-500 rounded-full"></div> 100% Execution Rate</span>
         </div>
         
-        <a
-          href="#portfolio"
-          className="w-full py-5 bg-[#0F172A] dark:bg-blue-600 hover:scale-[1.02] active:scale-95 text-white rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group"
-        >
-          Check My Catalogue
-          <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-        </a>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#portfolio"
+            className="flex-1 py-5 bg-[#0F172A] dark:bg-blue-600 hover:scale-[1.02] active:scale-95 text-white rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group"
+          >
+            Catalogue
+            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+          </a>
+          <a
+            href="#resume"
+            className="flex-1 py-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 text-[#0F172A] dark:text-white rounded-2xl font-black text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-3"
+          >
+            Resume
+          </a>
+        </div>
       </div>
 
       <div className="mt-auto hidden lg:block overflow-hidden rounded-2xl border border-dashed border-slate-200 dark:border-slate-800 p-4">

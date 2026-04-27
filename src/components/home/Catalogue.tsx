@@ -18,7 +18,7 @@ export default function Catalogue({ projects }: CatalogueProps) {
     : projects.filter(p => p.techStack.includes(filter));
 
   return (
-    <div id="portfolio" className="w-full space-y-12 py-12">
+    <div id="portfolio" className="w-full space-y-12 py-12 px-4 sm:px-0">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <h2 className="text-3xl font-black text-[#0F172A] dark:text-white tracking-tighter">EXHIBITION.EXE</h2>
