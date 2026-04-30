@@ -11,6 +11,7 @@ import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import CustomCursor from './components/ui/CustomCursor';
+import CodeBackground from './components/ui/CodeBackground';
 import { useAuthState } from './hooks/useAuthState';
 
 function ScrollProgressBar() {
@@ -36,7 +37,8 @@ export default function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-500/30 cursor-none">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-500/30 cursor-none relative overflow-hidden">
+        <CodeBackground />
         <CustomCursor />
         <ScrollProgressBar />
         <Toaster position="top-right" />
