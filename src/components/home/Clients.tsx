@@ -2,11 +2,31 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const COMPANIES = [
-  { name: 'Apple', color: 'dark:text-white text-slate-900' },
-  { name: 'Microsoft', color: 'text-[#00a1f1]' },
-  { name: 'Google', color: 'text-[#4285f4]' },
-  { name: 'Amazon', color: 'text-[#ff9900]' },
-  { name: 'Meta', color: 'text-[#0668E1]' },
+  { 
+    name: 'Apple', 
+    color: 'hover:text-black dark:hover:text-white', 
+    svg: <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 md:w-12 md:h-12"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+  },
+  { 
+    name: 'Microsoft', 
+    color: 'hover:text-[#00a1f1]', 
+    svg: <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 md:w-12 md:h-12"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z"/></svg>
+  },
+  { 
+    name: 'Google', 
+    color: 'hover:text-[#4285f4]', 
+    svg: <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 md:w-12 md:h-12"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+  },
+  { 
+    name: 'Amazon', 
+    color: 'hover:text-[#ff9900]', 
+    svg: <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 md:w-12 md:h-12"><path d="M13.626 18.064c-2.47.95-5.269 1.411-8.127 1.31-1.636-.058-3.238-.346-4.731-.839a.784.784 0 0 1-.502-1.029.774.774 0 0 1 .958-.485c2.316.711 4.887 1.042 7.424.964 2.303-.07 4.56-.473 6.64-1.173.396-.133.829.07 1.002.46.166.386-.016.829-.396.993a20.082 20.082 0 0 1-2.268.799zm9.073-2.056c-.347-.367-.621-.611-.84-.716-.188-.088-.501-.116-.921-.073-.62.062-1.503.256-2.392.518-.328.096-.641.203-.927.311.23-.464.444-1.044.606-1.745.161-.699.208-1.393.136-1.956-.054-.424-.226-.74-.462-.892-.262-.169-.641-.186-1.066-.054a5.952 5.952 0 0 0-1.859.99 15.65 15.65 0 0 0-3.567 3.56c-.31.428-.596.877-.852 1.341a.81.81 0 0 1-.951.353.784.784 0 0 1-.456-.967c.307-.639.67-1.258 1.082-1.851 1.08-1.554 2.517-2.905 4.152-3.882 1.253-.749 2.536-1.196 3.738-1.298a2.535 2.535 0 0 1 1.761.439c.639.421 1.057 1.155 1.196 2.106.143.982.023 2.115-.347 3.23a10.875 10.875 0 0 1-1.378 2.853c.895-.295 1.776-.554 2.571-.741.97-.229 1.769-.268 2.213-.197.351.056.55.228.665.485.111.246.068.555-.078.892-.292.673-.918 1.31-1.684 1.879-1.299.965-2.81 1.621-3.692 1.955-.173.065-.369.096-.566.089a.834.834 0 0 1-.745-.989c.071-.357.294-.658.621-.833a6.76 6.76 0 0 0 2.518-2.22c-.655-.027-1.173-.081-1.506-.123z"/></svg>
+  },
+  { 
+    name: 'Meta', 
+    color: 'hover:text-[#0668E1]', 
+    svg: <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 md:w-12 md:h-12"><path d="M22.046 5.864a7.994 7.994 0 0 0-4.04-2.822A7.995 7.995 0 0 0 8.01 4.544c-3.132 1.83-5.264 4.555-5.917 7.56A7.99 7.99 0 0 0 5.438 18.9a7.997 7.997 0 0 0 4.042 2.823 7.994 7.994 0 0 0 9.996-1.503c3.13-1.83 5.263-4.553 5.916-7.558a7.992 7.992 0 0 0-3.346-6.798ZM8.441 16.54c-1.396 0-2.617-.552-3.418-1.464-.813-.923-1.161-2.197-.978-3.585.342-2.605 1.986-5.011 4.492-6.577 1.25-.78 2.668-1.206 4.137-1.233 1.396 0 2.617.55 3.418 1.463.813.924 1.161 2.198.977 3.586-.34 2.605-1.985 5.01-4.49 6.576-1.251.78-2.668 1.206-4.138 1.234ZM15.56 7.46c1.396 0 2.617.55 3.418 1.462.813.923 1.16 2.197.978 3.585-.342 2.605-1.986 5.012-4.492 6.577-1.25.78-2.668 1.207-4.137 1.235-1.396 0-2.618-.553-3.418-1.464-.813-.924-1.161-2.198-.978-3.586.342-2.605 1.986-5.01 4.492-6.576 1.25-.78 2.668-1.205 4.137-1.233Z"/></svg>
+  },
 ];
 
 export default function Clients() {
@@ -14,14 +34,17 @@ export default function Clients() {
     <div className="w-full py-16 border-y border-slate-100 dark:border-white/5 bg-slate-50/50 dark:bg-white/[0.01]">
       <div className="max-w-5xl mx-auto px-6">
         <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 text-center mb-12">Trusted by Global Entities</p>
-        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 md:gap-x-20">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
           {COMPANIES.map((company) => (
-            <div key={company.name} className="flex flex-col items-center gap-2 group transition-all duration-500">
-              <span className={`text-xl md:text-2xl font-black tracking-tighter uppercase transition-all duration-300 ${company.color} opacity-40 group-hover:opacity-100 group-hover:scale-110`}>
-                {company.name}
-              </span>
-              <div className="h-0.5 w-0 group-hover:w-full bg-blue-500 transition-all duration-500"></div>
-            </div>
+            <motion.div 
+              key={company.name} 
+              whileHover={{ y: -5, scale: 1.1 }}
+              className="flex flex-col items-center gap-2 group cursor-pointer"
+            >
+              <div className={`text-slate-400/50 dark:text-slate-500/50 transition-all duration-500 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] ${company.color}`}>
+                {company.svg}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
