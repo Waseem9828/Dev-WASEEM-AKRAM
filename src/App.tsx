@@ -42,7 +42,6 @@ export default function App() {
         <CustomCursor />
         <ScrollProgressBar />
         <Toaster position="top-right" />
-        <Navbar user={user} />
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
