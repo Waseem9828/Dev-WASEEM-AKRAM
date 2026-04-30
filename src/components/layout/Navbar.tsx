@@ -17,7 +17,7 @@ export default function Navbar({ user }: NavbarProps) {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-5xl"
+      className="relative z-[100] w-full max-w-[1600px] mx-auto pt-6 px-4 md:px-8"
     >
       <div className="glass-card rounded-[2rem] border-white/20 dark:border-white/10 py-3 px-4 md:px-6 shadow-[0_20px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex items-center justify-between backdrop-blur-2xl">
         <div className="flex items-center gap-3">
